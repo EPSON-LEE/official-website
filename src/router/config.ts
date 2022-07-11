@@ -2,7 +2,7 @@ const RICH_TEXT = 1;
 const LIST = 2;
 const ORIGINAL = 3;
 
-const flatten = (arr) => arr.reduce((prev, curr, index, list) => {
+const flatten = (arr) => arr.reduce((prev, curr) => {
   if (Array.isArray(curr.children)) {
     return prev.concat(...flatten(curr.children));
   }
@@ -174,8 +174,6 @@ const MENU_ITEMS = [
 ];
 
 const ROUTERS = flatten(MENU_ITEMS);
-
-console.log('ROUTERS', ROUTERS);
 
 export {
   MENU_ITEMS,
