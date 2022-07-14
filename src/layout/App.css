@@ -1,5 +1,9 @@
 @import '~antd/dist/antd.css';
 @import '~@ant-design/pro-components/dist/components.css';
+@import 'slick-carousel/slick/slick.css';
+@import 'slick-carousel/slick/slick-theme.css';
+@import '@ant-design/pro-components/dist/components.css';
+
 
 * {
   margin: 0;
@@ -26,5 +30,5 @@
 }
 
 .site-layout .site-layout-background {
-  background: #fff;
+  /* background: #fff; */
 }
