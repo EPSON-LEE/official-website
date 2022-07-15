@@ -16,6 +16,7 @@ const AppRoutes: React.FC = () => {
 
 export {
     AppRoutes,
+    ROUTERS,
     MENU_ITEMS
 };
 

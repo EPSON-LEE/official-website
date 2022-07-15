@@ -2,6 +2,7 @@ import React, { useEffect, useMemo, useState } from 'react';
 import { PageContainer } from '@ant-design/pro-components';
 import { Card } from 'antd';
 import { Avatar, List } from 'antd';
+import { getArticleList } from '../../api/Content'
 
 export default () => {
   const customLoadingDom = useMemo(
@@ -23,11 +24,7 @@ export default () => {
   ];
 
   return (
-    <div style={{
-      // display: 'flex',
-      // flexDirection: 'row',
-      // justifyContent: 'space-around',
-    }}>
+    <div>
       <List
         grid={{ gutter: 16, column: 3 }}
         dataSource={data}

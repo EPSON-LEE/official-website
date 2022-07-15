@@ -1,6 +1,7 @@
 import React from 'react';
 // import Slider from 'react-slick';
 import { Carousel } from 'antd';
+import './index.css'
 
 
 
@@ -17,47 +18,13 @@ const App = () => {
     <Carousel
       autoplay
       afterChange={onChange}>
-      <div>
-        <h3 style={{
-          height: '300px',
-          color: '#fff',
-          lineHeight: '300px',
-          textAlign: 'center',
-          background: '#364d79',
-        }}>1
-        </h3>
+      <div className='img'>
+        <img src="http://www.mnu.cn/images/banner/tsg.jpg" alt="" />
       </div>
-      <div>
-        <h3 style={{
-          height: '300px',
-          color: '#fff',
-          lineHeight: '300px',
-          textAlign: 'center',
-          background: '#364d79',
-        }}>2
-        </h3>
+      <div className='img'>
+        <img src="http://www.mnu.cn/images/banner/tsg.jpg" alt="" />
       </div>
-      <div>
-        <h3 style={{
-          height: '300px',
-          color: '#fff',
-          lineHeight: '300px',
-          textAlign: 'center',
-          background: '#364d79',
-        }}>3
-        </h3>
-      </div>
-      <div>
-        <h3 style={{
-          height: '300px',
-          color: '#fff',
-          lineHeight: '300px',
-          textAlign: 'center',
-          background: '#364d79',
-        }}>4
-        </h3>
-      </div>
-    </Carousel>
+    </Carousel >
   );
 };
 

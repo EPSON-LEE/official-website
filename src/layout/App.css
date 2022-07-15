@@ -1,7 +1,7 @@
 @import '~antd/dist/antd.css';
 @import '~@ant-design/pro-components/dist/components.css';
-@import 'slick-carousel/slick/slick.css';
-@import 'slick-carousel/slick/slick-theme.css';
+/* @import 'slick-carousel/slick/slick.css';
+@import 'slick-carousel/slick/slick-theme.css'; */
 @import '@ant-design/pro-components/dist/components.css';
 
 
@@ -9,6 +9,38 @@
   margin: 0;
   padding: 0;
   border: 0;
+}
+
+.header {
+  background-image: url(http://jwc.mnu.cn/images/head-bg.png);
+}
+
+.header .head {
+  height: 100%;
+  margin: 0px auto;
+}
+
+.logo {
+  margin: 0px auto;
+  height: 100px;
+  line-height: 100px;
+  text-align: center;
+  margin-top: 20px;
+  margin-left: 40px;
+}
+
+.logo-banner {
+  vertical-align: middle;
+}
+
+.wrapper {
+  width: 90vw;
+  margin: 0px auto;
+  height: 100vh;
+  background-image: url(https://gw.alipayobjects.com/zos/rmsportal/TVYTbAXWheQpRcWDaDMu.svg);
+  background-repeat: no-repeat;
+  background-position: center 110px;
+  background-size: 100%;
 }
 
 #components-layout-demo-custom-trigger .trigger {

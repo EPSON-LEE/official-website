@@ -1,5 +1,7 @@
 import React from 'react';
 import Home from '../pages/Home';
+import RichText from '../pages/List';
+import Content from '../pages/Content';
 
 const RICH_TEXT = 1;
 const LIST = 2;
@@ -18,11 +20,15 @@ const flatten = (arr) => arr.reduce((prev, curr, index, list) => {
     label,
     path: key,
     element: element || `${label}-${meta?.pageType}`,
-    icon: 'home',
   };
 });
 
-const MENU_ITEMS = [
+const MENU_LIST = [
+  {
+    key: '/content',
+    element: <Content />,
+    hiddenInMenu: true
+  },
   {
     label: '首页',
     key: '/home',
@@ -34,8 +40,10 @@ const MENU_ITEMS = [
   {
     label: '实 验 室 简 介',
     key: '/lab',
+    element: <RichText />,
     meta: {
-      pageType: RICH_TEXT
+      pageType: RICH_TEXT,
+      code: 'SYSJJ'
     }
   },
   {
@@ -49,15 +57,19 @@ const MENU_ITEMS = [
           {
             label: '综合新闻',
             key: '/news/info',
+            element: <RichText />,
             meta: {
-              pageType: LIST
+              pageType: LIST,
+              code: 'ZHXW'
             }
           },
           {
             label: '通知公告',
             key: '/news/notice',
+            element: <RichText />,
             meta: {
-              pageType: RICH_TEXT
+              pageType: RICH_TEXT,
+              code: 'TZGG'
             }
           },
         ],
@@ -73,17 +85,30 @@ const MENU_ITEMS = [
         label: '',
         children: [
           {
+            label: '科研人员',
+            key: '/researchers/list',
+            element: <RichText />,
+            meta: {
+              pageType: LIST,
+              code: 'KYRY'
+            }
+          },
+          {
             label: '人才情况',
             key: '/researchers/talented_info',
+            element: <RichText />,
             meta: {
-              pageType: LIST
+              pageType: LIST,
+              code: 'RCQK'
             }
           },
           {
             label: '教师动态',
             key: '/researchers/teacher_info',
+            element: <RichText />,
             meta: {
-              pageType: RICH_TEXT
+              pageType: RICH_TEXT,
+              code: 'JSQK'
             }
           },
         ],
@@ -101,22 +126,28 @@ const MENU_ITEMS = [
           {
             label: '研究方向',
             key: '/research/direction',
+            element: <RichText />,
             meta: {
-              pageType: RICH_TEXT
+              pageType: RICH_TEXT,
+              code: 'YJFX'
             }
           },
           {
             label: '研究成果',
             key: '/research/outcome',
+            element: <RichText />,
             meta: {
-              pageType: RICH_TEXT
+              pageType: RICH_TEXT,
+              code: 'YJCG'
             }
           },
           {
             label: '学术活动',
             key: '/research/academic_activity',
+            element: <RichText />,
             meta: {
-              pageType: RICH_TEXT
+              pageType: RICH_TEXT,
+              code: 'XSHD'
             }
           },
         ],
@@ -132,17 +163,22 @@ const MENU_ITEMS = [
         label: '',
         children: [
           {
-            label: '管理制度',
+            label: '实验室管理制度',
             key: '/lab_manage/system',
+            element: <RichText />,
+
             meta: {
-              pageType: RICH_TEXT
+              pageType: RICH_TEXT,
+              code: 'SYSGLZD'
             }
           },
           {
             label: '实验室安全',
             key: '/lab_manage/security',
+            element: <RichText />,
             meta: {
-              pageType: RICH_TEXT
+              pageType: RICH_TEXT,
+              code: 'SYSAS'
             }
           },
         ],
@@ -160,15 +196,19 @@ const MENU_ITEMS = [
           {
             label: '项目合作',
             key: 'research_cooperation/project',
+            element: <RichText />,
             meta: {
-              pageType: RICH_TEXT
+              pageType: RICH_TEXT,
+              code: 'XMHZ'
             }
           },
           {
             label: '联系我们',
             key: 'research_cooperation/contact',
+            element: <RichText />,
             meta: {
-              pageType: RICH_TEXT
+              pageType: RICH_TEXT,
+              code: 'LXWM'
             }
           }
         ]
@@ -177,9 +217,12 @@ const MENU_ITEMS = [
   }
 ];
 
-const ROUTERS = flatten(MENU_ITEMS);
+const ROUTERS = flatten(MENU_LIST);
+const MENU_ITEMS = MENU_LIST.filter((item) => !item.hiddenInMenu);
 
 console.log('ROUTERS', ROUTERS);
+console.log('MENU_ITEMS', MENU_ITEMS);
+
 
 export {
   MENU_ITEMS,

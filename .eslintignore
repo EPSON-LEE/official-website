@@ -10,3 +10,4 @@ coverage
 .prettierignore
 reportWebVitals.ts
 tsconfig.json
+src
